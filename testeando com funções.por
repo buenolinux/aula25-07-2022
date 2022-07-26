@@ -15,6 +15,7 @@ programa
 	{
 		perguntaPalavra()
 		criaVetorDigitado()
+		//exibirVetorDigitado()
 	}
 	funcao perguntaPalavra()
 	{
@@ -37,9 +38,16 @@ programa
 	}
 	funcao criaVetorDigitado()
 	{	
-		para(i=0;i<tamanhoMaximoPalavra;i++)
+		para(i=0; i<tamanhoMaximoPalavra; i++)
 		{
 			vetorDigitado[i] = tx.extrair_subtexto(palavraSecreta, i, i+1)
+		}	
+	}
+	funcao exibirVetorDigitado()
+	{
+		para(i=0;i<tamanhoMaximoPalavra;i++)
+		{
+			escreva(vetorDigitado[i]," ") 
 		}	
 	}
 }
