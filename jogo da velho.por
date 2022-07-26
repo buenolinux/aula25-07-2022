@@ -13,6 +13,7 @@ programa
 		leia(palavraDigitada)
 		
 		tamanho = tx.numero_caracteres(palavraDigitada)
+	
 		enquanto(tamanho > 20)
 		{
 			escreva("Jogador 1 digite a palavra secreta  com até 20 letras \n")
@@ -25,15 +26,17 @@ programa
 		{
 			vetorPalavra[x] = tx.extrair_subtexto(palavraDigitada, x, x+1)
 		}
-			
+		
+			escreva(" \n")	
 		enquanto(contaTentativas < tamanho)
 		{
 
+			desenhaForca()				
 				se(contaTentativas>0)
 				{
 					escreva("Você quer tentar arriscar a palavra\n Digite 1 para SIM ou 0 para NÃO ")
 					leia(decisao)
-					limpa()
+					
 					se(decisao == 1)
 					{
 						escreva("Arrisque um palpite \n")
@@ -50,6 +53,9 @@ programa
 						}
 					}
 				}
+				//desenhaForca()
+				limpa()
+				desenhaForca()
 				escreva("Qual a letra ")
 				leia
 				(letraDigitada)
@@ -82,10 +88,11 @@ programa
 			
 			contaTentativas++
 			para(x =0; x <tamanho; x++)
-			{
+			{	
+				//escreva(vetorPalavra[x])
 				se(vetorPalavraChutada[x] == vetorPalavra[x])
 				{
-					escreva(vetorPalavraChutada[x]," ")
+					//escreva(vetorPalavraChutada[x]," ")
 						
 				}
 			}
@@ -94,5 +101,23 @@ programa
 		
 		//posicao = tx.posicao_texto("a", palavraDigitada,0)
 		//escreva("A palavra digitada", palavraDigitada,"tem ", tamanho,"caracteres")
+	}
+	funcao desenhaForca()
+	{
+		para(x =0; x <tamanho; x++)
+		{	
+			//escreva(vetorPalavra[x])
+				se(vetorPalavraChutada[x] == vetorPalavra[x])
+				{
+					escreva(vetorPalavraChutada[x]," ")
+						
+				}
+				senao
+				{
+					escreva(" _ ")		
+				}
+			
+		}
+		escreva("\n")
 	}
 }
