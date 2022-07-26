@@ -1,37 +1,46 @@
 programa
 {
 	inclua biblioteca Texto --> tx
-	cadeia palavraDigitada, letraDigitada, vetorPalavra[20],palavraTentativa ="" ,vetorPalavraChutada[20]
+	const inteiro tamanhoLimite = 20
+	cadeia palavraDigitada, letraDigitada, vetorPalavra[tamanhoLimite],palavraTentativa ="" ,vetorPalavraChutada[tamanhoLimite]
 	inteiro posicao, tamanho, contaTentativas, x,y, decisao 
-	logico concluido = falso
-	inteiro contaRepetido 
+	logico concluido = falso, tamanhoPalavra = verdadeiro
+	inteiro contaRepetido =0
 	
 	funcao inicio()
 	{
 		contaTentativas=0
-		escreva("Jogador 1 digite a palavra secreta com até 20 letras  \n")
-		leia(palavraDigitada)
 		
-		tamanho = tx.numero_caracteres(palavraDigitada)
 	
-		enquanto(tamanho > 20)
+		enquanto(tamanhoPalavra == verdadeiro)
 		{
 			escreva("Jogador 1 digite a palavra secreta  com até 20 letras \n")
 			leia(palavraDigitada)
 			tamanho = tx.numero_caracteres(palavraDigitada)
+			se(tamanho > tamanhoLimite)
+			{
+				tamanhoPalavra = verdadeiro
+			}
+			senao
+			{
+				tamanhoPalavra = falso
+			}
+			limpa()
 		}
 		
 		limpa()
 		para(x=0; x< tamanho; x++)
 		{
 			vetorPalavra[x] = tx.extrair_subtexto(palavraDigitada, x, x+1)
+			vetorPalavraChutada[x] =" _ "
 		}
 		
 			escreva(" \n")	
+			
 		enquanto(contaTentativas < tamanho)
 		{
 
-			desenhaForca()				
+			exibePalavraCorreta()			
 				se(contaTentativas>0)
 				{
 					escreva("Você quer tentar arriscar a palavra\n Digite 1 para SIM ou 0 para NÃO ")
@@ -55,12 +64,12 @@ programa
 				}
 				//desenhaForca()
 				limpa()
-				desenhaForca()
+				exibePalavraCorreta()
 				escreva("Qual a letra ")
 				leia
 				(letraDigitada)
 				limpa()
-				contaRepetido =0
+				//contaRepetido =0
 				//vetorPalavraChutada[contaTentativas] = letraDigitada
 				
 				para(x=0; x < tamanho; x++)
@@ -73,15 +82,19 @@ programa
 						//escreva("posição encontrada ",posicao," ",contaTentativas " \n")
 						
 					}
-					se(letraDigitada == vetorPalavra[x])
+					se(vetorPalavraChutada[x] == vetorPalavra[x])
 					{
 						contaRepetido++
+					}
+					se((x + 1) == tamanho)
+					{
+						escreva(" igual ")	
 					}
 			
 			
 				
 				}
-				se(contaRepetido ==  2)
+			/*	se(contaRepetido ==  2)
 				{
 					//contaTentativas = contaTentativas + contaRepetido
 					contaTentativas++
@@ -94,14 +107,16 @@ programa
 					
 					
 					}
+			*/
 			
 			contaTentativas++
 			para(x =0; x <tamanho; x++)
 			{	
 				//escreva(vetorPalavra[x])
-				se(vetorPalavraChutada[x] == vetorPalavra[x])
+				se(letraDigitada == vetorPalavra[x])
 				{
 					//escreva(vetorPalavraChutada[x]," ")
+						contaRepetido++
 						
 				}
 			}
@@ -110,14 +125,15 @@ programa
 		
 		//posicao = tx.posicao_texto("a", palavraDigitada,0)
 		//escreva("A palavra digitada", palavraDigitada,"tem ", tamanho,"caracteres")
-		desenhaForca()
+		exibePalavraCorreta()
+		escreva(" repetidos ", contaRepetido," ")
 	}
-	funcao desenhaForca()
+	funcao exibePalavraCorreta()
 	{
 		para(x =0; x <tamanho; x++)
 		{	
 			//escreva(vetorPalavra[x])
-				se(vetorPalavraChutada[x] == vetorPalavra[x])
+				/*se(vetorPalavraChutada[x] == vetorPalavra[x])
 				{
 					escreva(vetorPalavraChutada[x]," ")
 						
@@ -125,7 +141,8 @@ programa
 				senao
 				{
 					escreva(" _ ")		
-				}
+				}*/
+				escreva(vetorPalavraChutada[x]," ")
 			
 		}
 		escreva("\n")
