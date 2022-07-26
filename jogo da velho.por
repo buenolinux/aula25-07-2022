@@ -4,8 +4,7 @@ programa
 	cadeia palavraDigitada, letraDigitada, vetorPalavra[20],palavraTentativa ="" ,vetorPalavraChutada[20]
 	inteiro posicao, tamanho, contaTentativas, x,y, decisao 
 	logico concluido = falso
-	inteiro tes =0
-	inteiro con =0
+	inteiro contaRepetido 
 	
 	funcao inicio()
 	{
@@ -27,7 +26,7 @@ programa
 			vetorPalavra[x] = tx.extrair_subtexto(palavraDigitada, x, x+1)
 		}
 			
-		enquanto(contaTentativas < tamanho ou concluido != verdadeiro)
+		enquanto(contaTentativas < tamanho)
 		{
 
 				se(contaTentativas>0)
@@ -55,49 +54,41 @@ programa
 				leia
 				(letraDigitada)
 				limpa()
+				contaRepetido =0
 				//vetorPalavraChutada[contaTentativas] = letraDigitada
 				
-			para(x=0; x < tamanho; x++)
-			{
-				posicao = tx.posicao_texto(letraDigitada, palavraDigitada, x)
-				se(posicao>=0)
+				para(x=0; x < tamanho; x++)
 				{
-						
-					vetorPalavraChutada[posicao] = letraDigitada
-					//escreva("posição encontrada ",posicao," ",contaTentativas " \n")
-					
-			}
-			
-				enquanto(tes <= tamanho)
-				{
-					se(vetorPalavraChutada[tes] == vetorPalavra[tes])
+					posicao = tx.posicao_texto(letraDigitada, palavraDigitada, x)
+					se(posicao>=0)
 					{
-						escreva(vetorPalavraChutada[tes]," ")
-						con++	
+							
+						vetorPalavraChutada[posicao] = letraDigitada
+						//escreva("posição encontrada ",posicao," ",contaTentativas " \n")
+						
 					}
-					tes++
-				}
-				se(con == tamanho )
-				{
-					concluido = verdadeiro	
-					
-				}
-				//escreva(vetorPalavra[x]," ")
+					se(letraDigitada == vetorPalavra[x])
+					{
+						contaRepetido++
+					}
 			
+			
+				
+				}
+				se(contaRepetido>1)
+				{
+					contaTentativas++
+				}
 			
 			contaTentativas++
-				
-			}
-			
-			
-		para(x =0; x <tamanho; x++)
-		{
-			se(vetorPalavraChutada[x] == vetorPalavra[x])
+			para(x =0; x <tamanho; x++)
 			{
-				escreva(vetorPalavraChutada[x]," ")
-					
+				se(vetorPalavraChutada[x] == vetorPalavra[x])
+				{
+					escreva(vetorPalavraChutada[x]," ")
+						
+				}
 			}
-		}
 			
 		}
 		
