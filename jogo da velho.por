@@ -4,7 +4,7 @@ programa
 	const inteiro tamanhoLimite = 20
 	cadeia palavraDigitada, letraDigitada, vetorPalavra[tamanhoLimite],palavraTentativa ="" ,vetorPalavraChutada[tamanhoLimite]
 	inteiro posicao, tamanho, contaTentativas, x,y, decisao 
-	logico concluido = falso, tamanhoPalavra = verdadeiro
+	logico concluido = falso, tamanhoPalavra = verdadeiro, acertou 
 	inteiro contaRepetido =0
 	
 	funcao inicio()
@@ -71,7 +71,7 @@ programa
 				limpa()
 				//contaRepetido =0
 				//vetorPalavraChutada[contaTentativas] = letraDigitada
-				
+				acertou = falso
 				para(x=0; x < tamanho; x++)
 				{
 					posicao = tx.posicao_texto(letraDigitada, palavraDigitada, x)
@@ -82,17 +82,17 @@ programa
 						//escreva("posição encontrada ",posicao," ",contaTentativas " \n")
 						
 					}
-					se(vetorPalavraChutada[x] == vetorPalavra[x])
+					se(letraDigitada == vetorPalavra[x])
 					{
-						contaRepetido++
-					}
-					se((x + 1) == tamanho)
-					{
-						escreva(" igual ")	
-					}
-			
-			
+						//escreva(vetorPalavraChutada[x]," ")
+						acertou = verdadeiro
+						
+					}			
 				
+				}
+				se(acertou == verdadeiro)
+				{
+					contaRepetido++
 				}
 			/*	se(contaRepetido ==  2)
 				{
@@ -110,16 +110,8 @@ programa
 			*/
 			
 			contaTentativas++
-			para(x =0; x <tamanho; x++)
-			{	
-				//escreva(vetorPalavra[x])
-				se(letraDigitada == vetorPalavra[x])
-				{
-					//escreva(vetorPalavraChutada[x]," ")
-						contaRepetido++
-						
-				}
-			}
+			
+			
 			
 		}
 		
