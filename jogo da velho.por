@@ -81,10 +81,19 @@ programa
 			
 				
 				}
-				se(contaRepetido>1)
+				se(contaRepetido ==  2)
 				{
+					//contaTentativas = contaTentativas + contaRepetido
 					contaTentativas++
 				}
+				senao se (contaRepetido > 2)
+				{
+					contaTentativas = contaTentativas+ contaRepetido
+				}
+				senao{
+					
+					
+					}
 			
 			contaTentativas++
 			para(x =0; x <tamanho; x++)
@@ -101,6 +110,7 @@ programa
 		
 		//posicao = tx.posicao_texto("a", palavraDigitada,0)
 		//escreva("A palavra digitada", palavraDigitada,"tem ", tamanho,"caracteres")
+		desenhaForca()
 	}
 	funcao desenhaForca()
 	{
