@@ -1,0 +1,37 @@
+programa
+{
+	
+inclua biblioteca Texto --> tx
+
+	cadeia palavraSecreta, letraChutada
+	cadeia vetorPalavraSecreta[20],vetorLetraChutada[20]
+
+	inteiro i,tamanhoPalavraSecreta,x
+	funcao inicio()
+	{
+		escreva("Digite uma palavra secreta \n")
+		leia(palavraSecreta)
+		tamanhoPalavraSecreta = tx.numero_caracteres(palavraSecreta)
+		para(i=0; i<tamanhoPalavraSecreta; i++)
+		{
+			vetorPalavraSecreta[i] = tx.extrair_subtexto(palavraSecreta, i, i+1)	
+		}
+		i=0
+		enquanto(i<tamanhoPalavraSecreta)
+		{
+			escreva("Digite uma letra para adivinhar a palavra")
+			leia(letraChutada)
+			para(x=0; x<tamanhoPalavraSecreta; x++)
+			{
+				se(letraChutada == vetorPalavraSecreta[x] )
+				{
+					escreva(x)
+					pare
+				}
+			}
+			
+			i++
+		}
+		
+	}
+}
