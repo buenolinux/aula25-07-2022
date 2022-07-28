@@ -12,6 +12,10 @@ inclua biblioteca Texto --> tx
 		escreva("Digite uma palavra secreta \n")
 		leia(palavraSecreta)
 		tamanhoPalavraSecreta = tx.numero_caracteres(palavraSecreta)
+		para(x=0; x<tamanhoPalavraSecreta; x++)
+		{
+			vetorLetraChutada[x] ="_"
+		}
 		para(i=0; i<tamanhoPalavraSecreta; i++)
 		{
 			vetorPalavraSecreta[i] = tx.extrair_subtexto(palavraSecreta, i, i+1)	
@@ -26,7 +30,8 @@ inclua biblioteca Texto --> tx
 				se(letraChutada == vetorPalavraSecreta[x] )
 				{
 					escreva(x)
-					pare
+					se(vetorLetraChutada[x] != "_" e vetorLetraChutada[x] != letraChutada)
+					vetorLetraChutada[x] = letraChutada
 				}
 			}
 			
