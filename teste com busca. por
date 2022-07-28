@@ -6,7 +6,7 @@ inclua biblioteca Texto --> tx
 	cadeia palavraSecreta, letraChutada
 	cadeia vetorPalavraSecreta[20],vetorLetraChutada[20]
 
-	inteiro i,tamanhoPalavraSecreta,x
+	inteiro i,tamanhoPalavraSecreta,x,y, posicao
 	funcao inicio()
 	{
 		escreva("Digite uma palavra secreta \n")
@@ -27,12 +27,17 @@ inclua biblioteca Texto --> tx
 			leia(letraChutada)
 			para(x=0; x<tamanhoPalavraSecreta; x++)
 			{
-				se(letraChutada == vetorPalavraSecreta[x] )
-				{
-					escreva(x)
-					se(vetorLetraChutada[x] != "_" e vetorLetraChutada[x] != letraChutada)
-					vetorLetraChutada[x] = letraChutada
-				}
+					se(letraChutada == vetorPalavraSecreta[x] )
+					{
+						posicao =x
+						pare										
+						
+					}
+				
+			}
+			se(vetorLetraChutada[posicao] == "_" e vetorLetraChutada[posicao] != letraChutada)
+			{
+			vetorLetraChutada[posicao] = letraChutada
 			}
 			
 			i++
