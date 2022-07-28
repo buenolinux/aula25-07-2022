@@ -27,18 +27,17 @@ inclua biblioteca Texto --> tx
 			leia(letraChutada)
 			para(x=0; x<tamanhoPalavraSecreta; x++)
 			{
-					se(letraChutada == vetorPalavraSecreta[x] )
+					se((letraChutada == vetorPalavraSecreta[x])  e (vetorLetraChutada[x] != letraChutada  ))
 					{
-						posicao =x
-						pare										
+						posicao =x															
 						
 					}
 				
 			}
-			se(vetorLetraChutada[posicao] == "_" e vetorLetraChutada[posicao] != letraChutada)
-			{
-			vetorLetraChutada[posicao] = letraChutada
-			}
+				se(vetorLetraChutada[posicao] == "_" e vetorLetraChutada[posicao] != letraChutada)
+				{
+					vetorLetraChutada[posicao] = letraChutada
+				}
 			
 			i++
 		}
