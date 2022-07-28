@@ -4,9 +4,9 @@ programa
 inclua biblioteca Texto --> tx
 
 	cadeia palavraSecreta, letraChutada
-	cadeia vetorPalavraSecreta[20],vetorLetraChutada[20]
+	cadeia vetorPalavraSecreta[20],vetorLetraChutada[20],posicoes[20]
 
-	inteiro i,tamanhoPalavraSecreta,x,y, posicao
+	inteiro i,tamanhoPalavraSecreta,x,y, posicao, contador=0
 	funcao inicio()
 	{
 		escreva("Digite uma palavra secreta \n")
@@ -23,24 +23,41 @@ inclua biblioteca Texto --> tx
 		i=0
 		enquanto(i<tamanhoPalavraSecreta)
 		{
+			contador=0
 			escreva("Digite uma letra para adivinhar a palavra")
 			leia(letraChutada)
+			
 			para(x=0; x<tamanhoPalavraSecreta; x++)
 			{
 					se((letraChutada == vetorPalavraSecreta[x])  e (vetorLetraChutada[x] != letraChutada  ))
 					{
-						posicao =x															
+						posicao =x
+						contador++
 						
+																					
+			
 					}
+					
 				
 			}
+			
+			para(y=0; y< contador; y++)
+			{
 				se(vetorLetraChutada[posicao] == "_" e vetorLetraChutada[posicao] != letraChutada)
 				{
 					vetorLetraChutada[posicao] = letraChutada
-				}
+					escreva("\n vetor letra chutada ",vetorLetraChutada[y]," \n")
+				}	
+			}
 			
+			
+				
+			escreva("\n contador ",  contador," \n")
 			i++
 		}
 		
+		
+		
 	}
+	
 }
