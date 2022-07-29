@@ -38,11 +38,12 @@ inclua biblioteca Texto --> tx
 																					
 			
 					}
-					escreva(vetorLetraChutada[x]," ", contador," \n")
+					escreva(vetorLetraChutada[x]," ")
 					
 					 
 				
 			}
+			
 			
 			/*para(y=0; y< contador; y++)
 			{
@@ -58,7 +59,7 @@ inclua biblioteca Texto --> tx
 						pare
 					}
 				
-			escreva("\n contador ",  contador," \n")
+			
 			i++
 		}
 		
