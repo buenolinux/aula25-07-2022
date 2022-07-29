@@ -7,6 +7,8 @@ inclua biblioteca Texto --> tx
 	cadeia vetorPalavraSecreta[20],vetorLetraChutada[20],posicoes[20], vertorBoneco[6]
 
 	inteiro i,tamanhoPalavraSecreta,x,y, posicao, contaAcertos, contaErros
+
+	logico jogo = verdadeiro
 	funcao inicio()
 	{
 		escreva("Digite uma palavra secreta \n")
@@ -22,7 +24,7 @@ inclua biblioteca Texto --> tx
 		i=0
 		contaAcertos=0
 		contaErros =0
-		enquanto(i<tamanhoPalavraSecreta)
+		enquanto( jogo == verdadeiro)
 		{
 			
 			escreva(" \nDigite uma letra para adivinhar a palavra")
@@ -63,7 +65,7 @@ inclua biblioteca Texto --> tx
 				escreva("\n Parabens você acertou a palavra secreta ")
 				pare
 			}
-			se(contaErros ==6 ou i == tamanhoPalavraSecreta -1)
+			se(contaErros == 6 /* ou  contaErros > contaAcertos    tou i == tamanhoPalavraSecreta -1*/)
 			{
 				escreva("\nVocê perdeu ")
 				pare
@@ -86,10 +88,7 @@ inclua biblioteca Texto --> tx
 	}
 	/*
 	
-	programa
-{
-	
-	funcao inicio()
+funcao inicio()
 	{
 	
 		escreva(" _")
@@ -97,14 +96,15 @@ inclua biblioteca Texto --> tx
 		escreva(" _")
 		escreva(" _")
 		escreva("\n|"," "," "," "," "," ","  |")
+		escreva("\n|"," "," "," "," "," ","  o")
+		escreva("\n|"," "," "," "," ","  /","|\\")
+		escreva("\n|"," "," "," "," ","   ","- ")
+		escreva("\n|"," "," "," "," ","  /"," \\")
 		escreva("\n|")
 		escreva("\n|")
 		escreva(" _")
 		escreva(" _")
 		escreva(" _")
-	}
-}
-
 	
 	*/
 }
