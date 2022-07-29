@@ -34,17 +34,25 @@ inclua biblioteca Texto --> tx
 			{
 					se((letraChutada == vetorPalavraSecreta[x])  /*e (vetorLetraChutada[x] != letraChutada  )*/)
 					{
-						posicao =x
-						contaAcertos++
-						vetorLetraChutada[x] = letraChutada
+							/*
+							vetorLetraChutada[x] = letraChutada
+							contaAcertos++
+							*/
+						se(letraChutada != vetorLetraChutada[x])
+						{
+							
+							vetorLetraChutada[x] = letraChutada
+							contaAcertos++
+						}
+						
 						 															
 			
 					}
 					escreva(vetorLetraChutada[x]," ")
-					se(letraChutada != vetorPalavraSecreta[x] e x == tamanhoPalavraSecreta-1 )
+					se(letraChutada != vetorPalavraSecreta[x] e x >= tamanhoPalavraSecreta )
 					{
 						contaErros++
-						//escreva(contaErros," ")
+						escreva(contaErros," ")
 					}
 					 
 				
