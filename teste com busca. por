@@ -39,10 +39,7 @@ inclua biblioteca Texto --> tx
 			
 					}
 					escreva(vetorLetraChutada[x]," ", contador," \n")
-					se(contador ==tamanhoPalavraSecreta-1)
-					{
-						pare
-					}
+					
 					 
 				
 			}
