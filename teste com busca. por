@@ -49,7 +49,7 @@ inclua biblioteca Texto --> tx
 			
 					}
 					escreva(vetorLetraChutada[x]," ")
-					se(letraChutada != vetorPalavraSecreta[x] e x >= tamanhoPalavraSecreta )
+					se(letraChutada != vetorPalavraSecreta[x] e x == tamanhoPalavraSecreta -1)
 					{
 						contaErros++
 						escreva(contaErros," ")
