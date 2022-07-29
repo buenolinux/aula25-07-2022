@@ -39,10 +39,10 @@ inclua biblioteca Texto --> tx
 			
 					}
 					escreva(vetorLetraChutada[x]," ")
-					se(letraChutada != vetorPalavraSecreta[x])
+					se(letraChutada != vetorPalavraSecreta[x] e x == tamanhoPalavraSecreta-1 )
 					{
 						contaErros++
-						escreva(contaErros," ")
+						//escreva(contaErros," ")
 					}
 					 
 				
@@ -60,12 +60,12 @@ inclua biblioteca Texto --> tx
 			
 			se(contaAcertos ==tamanhoPalavraSecreta)
 			{
-				escreva("\nsParabens você acertou a palavra secreta ")
+				escreva("\n Parabens você acertou a palavra secreta ")
 				pare
 			}
-			se(contaErros ==6)
+			se(contaErros ==6 ou i == tamanhoPalavraSecreta -1)
 			{
-				escreva("\nVocê errou 6 vezes e perdeu o jogo ")
+				escreva("\nVocê perdeu ")
 				pare
 			}
 		
