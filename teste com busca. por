@@ -56,7 +56,10 @@ inclua biblioteca Texto --> tx
 				}	
 			}*/
 			
-			
+			se(contador ==tamanhoPalavraSecreta)
+					{
+						pare
+					}
 				
 			escreva("\n contador ",  contador," \n")
 			i++
