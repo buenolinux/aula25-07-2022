@@ -16,6 +16,7 @@ inclua biblioteca Texto --> tx
 	{
 		escreva("Digite uma palavra secreta \n")
 		leia(palavraSecreta)
+		palavraSecreta = tx.caixa_baixa(palavraSecreta)
 		limpa()
 		tamanhoPalavraSecreta = tx.numero_caracteres(palavraSecreta)
 		criaoForca(letraErrada)
@@ -27,6 +28,7 @@ inclua biblioteca Texto --> tx
 			contaErros =0			
 			escreva(" \nDigite uma letra para adivinhar a palavra")
 			leia(letraChutada)
+			letraChutada = tx.caixa_baixa(letraChutada)
 			limpa()						
 			para(x=0; x<tamanhoPalavraSecreta; x++)
 			{
